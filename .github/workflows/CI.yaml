@@ -11,18 +11,18 @@ on:
 jobs:
   ci-master:
     if: github.ref == 'refs/heads/master'
-    uses: org/reusable-workflows/.github/workflows/reusable-ci.yml@main
+    uses: org/reusable-workflows/.github/workflows/CI.yml@master
     with:
       branch: "master"
 
   ci-develop:
     if: github.ref == 'refs/heads/develop'
-    uses: org/reusable-workflows/.github/workflows/reusable-ci.yml@main
+    uses: org/reusable-workflows/.github/workflows/CI.yml@master
     with:
       branch: "develop"
 
   ci-feature:
     if: contains(github.ref, 'refs/heads/feature/')
-    uses: org/reusable-workflows/.github/workflows/reusable-ci.yml@main
+    uses: org/reusable-workflows/.github/workflows/CI.yml@master
     with:
       branch: ${{ github.ref }}
